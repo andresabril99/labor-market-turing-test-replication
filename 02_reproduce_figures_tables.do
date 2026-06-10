@@ -321,7 +321,7 @@ pca minexp_requ college_requ ;
 predict pca1 ;
 
 sort pca1 q ;
-cumul pca1, generate(cdf_pca1) ;
+cumul pca1, generate(cdf_pca1) equal ;
 
 
 *-------------------------------------------------------------------------------;
@@ -342,7 +342,7 @@ twoway
     scheme(s1color)
     ytitle("Location parameter" "(relative stance)")
     xtitle("Vacancy's skill-requirement")
-    xlabel(0(.1)1, angle(horizontal) labsize(small) format(%4.2f) grid)
+    xlabel(0.1(.1)1, angle(horizontal) labsize(small) format(%4.2f) grid)
     ylabel(.30(.10).90, angle(horizontal) labsize(small) format(%4.2f) grid)
     legend(off)
     graphregion(color(white))
@@ -434,7 +434,7 @@ twoway
     scheme(s1color)
     ytitle("Differentiation parameter" "(relative stance)")
     xtitle("Vacancy's skill-requirement")
-    xlabel(0(.1)1, angle(horizontal) labsize(small) format(%4.2f) grid)
+    xlabel(0.1(.1)1, angle(horizontal) labsize(small) format(%4.2f) grid)
     ylabel(.45(.05).85, angle(horizontal) labsize(small) format(%4.2f) grid)
     legend(off)
     graphregion(color(white))
@@ -977,7 +977,7 @@ pca minexp_requ college_requ ;
 predict pca1 ;
 
 sort pca1 q ;
-cumul pca1, generate(cdf_pca1) ;
+cumul pca1, generate(cdf_pca1) equal ;
 
 gen diff_exp_u2   = (diff_exp<=.16) ;
 gen diff_exp_2to3 = (diff_exp>.16 & diff_exp<.25) ;
