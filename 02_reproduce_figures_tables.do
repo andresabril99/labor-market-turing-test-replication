@@ -16,14 +16,19 @@ capture log close
 * 0. PATHS AND OUTPUT SETTINGS ;
 *===============================================================================;
 
-global DIR_IRT "C:/Users/ANDRESABR/OneDrive - Inter-American Development Bank Group/Economistas CAN - Canal Ecuador - Canal Ecuador/4_Research/24_Labor Market Turing Test/RE_ Figures code for the paper/Final/Data/Processed" ;
+* Set root folder to the location where this do-file is being run.
+global ROOT "`c(pwd)'"
 
-* Output folder. By default, save figures in the IRT folder. Change if needed. ;
-global OUT "C:/Users/ANDRESABR/OneDrive - Inter-American Development Bank Group/Economistas CAN - Canal Ecuador - Canal Ecuador/4_Research/24_Labor Market Turing Test/RE_ Figures code for the paper/Final/Output/Figures" ;
+* Processed data folder created by 01_build_data.do.
+global DIR_IRT "$ROOT/Data/Processed"
 
-* Output folder for LaTeX tables ;
-global TABLEOUT "C:/Users/ANDRESABR/OneDrive - Inter-American Development Bank Group/Economistas CAN - Canal Ecuador - Canal Ecuador/4_Research/24_Labor Market Turing Test/RE_ Figures code for the paper/Final/Output/Tables" ;
-capture mkdir "$TABLEOUT" ;
+* Output folders.
+global OUT "$ROOT/Output/Figures"
+global TABLEOUT "$ROOT/Output/Tables"
+
+capture mkdir "$ROOT/Output"
+capture mkdir "$OUT"
+capture mkdir "$TABLEOUT"
 
 * Optional package checks ;
 capture which coefplot ;
