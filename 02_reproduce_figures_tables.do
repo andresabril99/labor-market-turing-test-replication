@@ -10,14 +10,13 @@ clear all
 set more off
 set seed 20250611
 capture log close
-# delimit ;
 
 *===============================================================================;
 * 0. PATHS AND OUTPUT SETTINGS ;
 *===============================================================================;
 
 * Set root folder to the location where this do-file is being run.
-global ROOT "`c(pwd)'"
+global ROOT "c(pwd)"
 
 * Processed data folder created by 01_build_data.do.
 global DIR_IRT "$ROOT/Data/Processed"
@@ -30,7 +29,9 @@ capture mkdir "$ROOT/Output"
 capture mkdir "$OUT"
 capture mkdir "$TABLEOUT"
 
-* Optional package checks ;
+* Optional package checks
+# delimit ;
+
 capture which coefplot ;
 if _rc display as error "Package coefplot is not installed. Run: ssc install coefplot" ;
 
