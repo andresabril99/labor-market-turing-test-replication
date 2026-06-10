@@ -23,14 +23,13 @@ clear all
 set more off
 set seed 20250611
 capture log close
-# delimit ;
 
 *===============================================================================;
 * 0. PATHS ;
 *===============================================================================;
 
 * Set root folder to the location where this do-file is being run.
-global ROOT "`c(pwd)'"
+global ROOT "c(pwd)"
 
 global RAW  "$ROOT/Data/Raw"
 global PROC "$ROOT/Data/Processed"
@@ -50,6 +49,7 @@ cd "$ROOT"
 *===============================================================================;
 * 1. LOAD CLEANED RAW DATABASE AND MERGE RECRUITER TESTS ;
 *===============================================================================;
+# delimit ;
 
 use "$RAW/Data_Base_Raw.dta", clear ;
 
