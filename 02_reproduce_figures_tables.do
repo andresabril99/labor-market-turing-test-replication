@@ -548,7 +548,7 @@ foreach g in 1 2 3 0 4 {;
             keep if recruiter==0 | recruiter==`g' ;
             scalar var_p = . ;
             quietly robvar z_machina, by(recruiter) ;
-            capture scalar var_p = r(p_w50) ;
+            capture scalar var_p = r(p_w0) ;
             if missing(var_p) {;
                 capture scalar var_p = r(p) ;
             };
