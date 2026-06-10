@@ -16,5 +16,5 @@ labor-market-turing-test-replication/
 │
 └── Data/
     └── Raw/
-        ├── Data_Base.dta
+        ├── Data_Base_Raw.dta
         └── Reclutadores_tests.dta
